@@ -1,0 +1,143 @@
+# This is the configuration used to check the rubocop source code.
+# url: https://docs.rubocop.org/rubocop/0.85/cops_style.html
+
+AllCops:
+  Exclude:
+    - 'config/routes.rb'
+    - 'db/schema.rb'
+  TargetRubyVersion: 2.7.1
+  TargetRailsVersion: 6.0.3.3
+
+  Rails:
+    Enabled: true
+
+  Rails/UnknownEnv:
+    Environments:
+      - production
+      - staging
+      - development
+      - test
+
+# modern editors and terminal fit more than 120 characters.
+Metrics/LineLength:
+  Max: 120
+
+# Class length is not critical to code quality
+Metrics/ClassLength:
+  Enabled: false
+
+# Module length is not critical to code quality
+Metrics/ModuleLength:
+  Enabled: false
+
+# Block length is ok to be long in DSLs like 'rspec' or 'rake'
+Metrics/BlockLength:
+  Enabled: false
+
+# defualt '10 line' is too strict to us, and may clutter the class
+Metrics/MethodLength:
+  Max: 25
+
+Metrics/AbcSize:
+  Max: 25
+
+# Most Rails generated class are not doced, and not needed
+Style/Documentation:
+  Enabled: false
+
+# 'return' makes code more readable in some cases
+Style/RedundantReturn:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
+
+# Guard is not always good to readablity
+# Note: It does not mean we don't use guard to reduce block levels
+# In short methods, using guard is not necessary, e.g.
+#   def foo(x)   | def foo(x)
+#     if xxx?(x) |   return unless xxx?(x)
+#       bar(x)   |   bar(x)
+#     end        | end
+#   end          |
+Style/GuardClause:
+  Enabled: false
+
+# The rule expects
+#
+#   if xxxxxx
+#     a_very_long_method_or_somethings_like_that......
+#   end
+#
+# to be
+#
+#   a_very_long_method_or_somethings_like_that...... if xxxxxx
+#
+# It is not good looking at all.
+Style/IfUnlessModifier:
+  Enabled: false
+
+# # bad
+# a = [1, 2,]
+#
+# # good
+# a = [
+#   1, 2,
+#   3,
+# ]
+#
+# # good
+# a = [
+#   1,
+#   2,
+# ]
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+# # good
+# foo(
+#   1,
+#   2,
+# )
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: consistent_comma
+
+# # good
+# a = {
+#   1,
+#   2,
+# }
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+# good
+# class Foo
+#
+#   def bar
+#     ...
+#   end
+#
+# end
+#
+# bad
+# class Foo
+#   def bar
+#     ...
+#   end
+# end
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+# bad
+# "No special symbols"
+# "No string interpolation"
+# "Just text"
+
+# good
+# 'No special symbols'
+# 'No string interpolation'
+# 'Just text'
+# "Wait! What's #{this}!"
+# Style/StringLiterals:
+#   EnforcedStyle: single_quotes (default)
