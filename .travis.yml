@@ -10,4 +10,5 @@ services:
   - postgresql
 script:
   - bundle exec rake db:migrate:reset RAILS_ENV=test
+  - bundle exec rspec
   - '{ git diff HEAD --name-only --diff-filter=MA & git diff origin/master..HEAD --name-only --diff-filter=MA; } | sort | uniq | xargs rubocop'
