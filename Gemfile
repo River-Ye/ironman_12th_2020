@@ -30,6 +30,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 # pretty print Ruby objects to visualize their structure.
 gem 'awesome_print', '~> 1.8'
+# Use Pry as your rails console, exapmle: can use cd 、 ls ...
+gem 'pry-rails', '~> 0.3.9'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
