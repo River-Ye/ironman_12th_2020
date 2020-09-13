@@ -25,6 +25,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
+    Rails.logger.info "params: #{user_params}, #{@user.inspect}"
 
     respond_to do |format|
       if @user.save
