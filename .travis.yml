@@ -1,0 +1,13 @@
+language: ruby
+rvm:
+- 2.7.1
+install:
+  - bundle install
+  - nvm install 10
+  - npm i -g yarn
+  - yarn
+services:
+  - postgresql
+script:
+  - bundle exec rake db:migrate:reset RAILS_ENV=test
+  - '{ git diff HEAD --name-only --diff-filter=MA & git diff origin/master..HEAD --name-only --diff-filter=MA; } | sort | uniq | xargs rubocop'
