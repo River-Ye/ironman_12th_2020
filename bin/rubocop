@@ -2,8 +2,8 @@
 class RubocopRunner
   COMPARE_TO_BRANCH = 'master'
   def self.check_branch_validity
-    current_branch = `git branch | grep \\* | cut -d ' ' -f2`.strip
-    if current_branch.empty? || current_branch == COMPARE_TO_BRANCH
+    current_branch = `git branch --show-current`.strip
+    if current_branch == COMPARE_TO_BRANCH
       puts "No git found, or you are still on #{COMPARE_TO_BRANCH} branch."
       exit 0
     end
