@@ -11,5 +11,4 @@ services:
 script:
   - bundle exec rake db:migrate:reset RAILS_ENV=test
   - bundle exec rspec
-  - git fetch origin master
-  - bundle exec bin/rubocop
+  - git fetch origin master && master_sha1="$(cut -c -40<<<"$(cat .git/FETCH_HEAD)")" && pronto run -c $master_sha1 --exit-code
