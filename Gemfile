@@ -33,6 +33,8 @@ gem 'awesome_print', '~> 1.8'
 # Use Pry as your rails console, exapmle: can use cd 、 ls ...
 gem 'pry-rails', '~> 0.3.9'
 
+gem 'thor', '~> 0.2'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -46,6 +48,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'pronto-rubocop', '~> 0.10.0'
   # style checking and code formatting tool. Read more: https://github.com/rubocop-hq/rubocop
   gem 'rubocop', '~> 0.90.0'
 end
