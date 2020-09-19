@@ -65,4 +65,10 @@ Rails.application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  # for Bullet gem
+  Bullet.enable = true
+  Bullet.bullet_logger = true
+  Bullet.console = true
+  Bullet.add_footer = true
 end
