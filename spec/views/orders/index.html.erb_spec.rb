@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "orders/index", type: :view do
   before(:each) do
+    @user = User.create
     assign(:orders, [
       Order.create!(
         name: "Name",
@@ -11,7 +12,7 @@ RSpec.describe "orders/index", type: :view do
         address: "Address",
         email: "Email",
         note: "Note",
-        user: nil
+        user: @user
       ),
       Order.create!(
         name: "Name",
@@ -21,7 +22,7 @@ RSpec.describe "orders/index", type: :view do
         address: "Address",
         email: "Email",
         note: "Note",
-        user: nil
+        user: @user
       )
     ])
   end
@@ -35,6 +36,5 @@ RSpec.describe "orders/index", type: :view do
     assert_select "tr>td", text: "Address".to_s, count: 2
     assert_select "tr>td", text: "Email".to_s, count: 2
     assert_select "tr>td", text: "Note".to_s, count: 2
-    assert_select "tr>td", text: nil.to_s, count: 2
   end
 end

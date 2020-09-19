@@ -10,7 +10,7 @@ RSpec.describe "orders/edit", type: :view do
       address: "MyString",
       email: "MyString",
       note: "MyString",
-      user: nil
+      user: User.create
     ))
   end
 
