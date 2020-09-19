@@ -49,6 +49,7 @@ group :development do
   gem 'pronto-rubocop', '~> 0.10.0'
   # style checking and code formatting tool. Read more: https://github.com/rubocop-hq/rubocop
   gem 'rubocop', '~> 0.90.0'
+  gem 'bullet', '~> 6.1'
 end
 
 group :test do
