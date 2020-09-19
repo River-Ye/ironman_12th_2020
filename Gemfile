@@ -33,8 +33,6 @@ gem 'awesome_print', '~> 1.8'
 # Use Pry as your rails console, exapmle: can use cd 、 ls ...
 gem 'pry-rails', '~> 0.3.9'
 
-gem 'thor', '~> 0.2'
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -56,6 +54,8 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
