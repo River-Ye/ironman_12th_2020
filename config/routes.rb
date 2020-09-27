@@ -1,5 +1,6 @@
 require 'resque/server'
 require 'sidekiq/web'
+require 'sidekiq-scheduler/web'
 
 Rails.application.routes.draw do
   resources :orders
