@@ -1,0 +1,12 @@
+:concurrency: 10
+:queues:
+  - ['default', 1]
+  - ['mailers', 1]
+  - ['scheduler', 5]
+  - ['create_order_worker', 10]
+:schedule:
+  CheckWorker:
+    cron: '30 * * * *'
+    queue: scheduler
+    enabled: true
+:timeout: 86400
