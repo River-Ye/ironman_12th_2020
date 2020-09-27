@@ -11,7 +11,9 @@ class UsersController < ApplicationController
 
   # GET /users/1
   # GET /users/1.json
-  def show; end
+  def show
+    Resque.enqueue(HelloWorldWorker, @user.id, 'hello world')
+  end
 
   # GET /users/new
   def new
