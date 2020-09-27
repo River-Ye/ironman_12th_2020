@@ -2,4 +2,5 @@
 :queues:
   - ['default', 1]
   - ['mailers', 1]
+  - ['create_order_worker', 10]
 :timeout: 86400
