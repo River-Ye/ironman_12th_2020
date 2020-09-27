@@ -34,6 +34,7 @@ gem 'awesome_print', '~> 1.8'
 gem 'pry-rails', '~> 0.3.9'
 # background jobs
 gem 'resque', '~> 2.0'
+gem 'sidekiq', '~> 6.1', '>= 6.1.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
