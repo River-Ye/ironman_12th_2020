@@ -128,6 +128,7 @@ GEM
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
       rake
+    foreman (0.87.2)
     fugit (1.3.9)
       et-orbi (~> 1.1, >= 1.1.8)
       raabro (~> 1.3)
@@ -392,6 +393,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   cucumber-rails
   database_cleaner
+  foreman (~> 0.87.2)
   http (~> 4.4, >= 4.4.1)
   jbuilder (~> 2.7)
   listen (~> 3.2)
