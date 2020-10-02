@@ -334,6 +334,7 @@ GEM
       rack (~> 2.2)
       rack-protection (= 2.1.0)
       tilt (~> 2.0)
+    slack-notifier (2.3.2)
     slack-ruby-client (0.15.1)
       faraday (>= 1.0)
       faraday_middleware
@@ -420,6 +421,7 @@ DEPENDENCIES
   selenium-webdriver
   sidekiq (~> 6.1, >= 6.1.2)
   sidekiq-scheduler (~> 3.0, >= 3.0.1)
+  slack-notifier (~> 2.3, >= 2.3.2)
   slack-ruby-client (~> 0.15.1)
   spring
   spring-watcher-listen (~> 2.0.0)
