@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.includes(:orders)
+    SlackBotWorker.perform_async('Hello World', names: 'river')
   end
 
   # GET /users/1
