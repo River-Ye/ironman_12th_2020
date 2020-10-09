@@ -15,7 +15,9 @@ Things you may want to cover:
 ## 使用方法:
 1. `git clone https://github.com/River-Ye/ironman_12th_2020.git`
 2. `bundle` (過程若有錯誤，依錯誤，將缺的補齊即可)
-3. `foreman start`
+3. `cp config\secrets.yml.example config\secrets.yml`
+4. `rails db:migrate:reset`
+5. `foreman start`
 
 ## 文章目錄
 | 編號 | 名稱                                                                                                               |                                                                            小菜的 Blog                                                                             |                         鐵人賽                         |                   Medium                    |
