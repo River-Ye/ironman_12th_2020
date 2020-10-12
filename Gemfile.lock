@@ -125,6 +125,8 @@ GEM
     exception_notification (4.4.3)
       actionmailer (>= 4.0, < 7)
       activesupport (>= 4.0, < 7)
+    fakeredis (0.8.0)
+      redis (~> 4.1)
     faraday (1.0.1)
       multipart-post (>= 1.2, < 3)
     faraday_middleware (1.0.0)
@@ -408,6 +410,7 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   exception_notification (~> 4.4, >= 4.4.3)
+  fakeredis
   foreman (~> 0.87.2)
   http (~> 4.4, >= 4.4.1)
   jbuilder (~> 2.7)

@@ -70,6 +70,7 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
+  gem 'fakeredis', require: 'fakeredis/rspec' # 隔離測試環境的 redis
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
