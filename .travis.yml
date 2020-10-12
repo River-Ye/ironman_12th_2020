@@ -8,6 +8,7 @@ install:
   - yarn
 services:
   - postgresql
+  - xvfb
 script:
   - cp config/secrets.yml.example config/secrets.yml
   - bundle exec rake db:migrate:reset RAILS_ENV=test
